@@ -83,6 +83,7 @@ export default function Dashboard() {
     vitorias: all.filter(p => p.status === 'Vitória').length,
     condenacoes: all.filter(p => p.status === 'Condenação').length,
     arquivados: all.filter(p => p.status === 'Arquivado').length,
+    acordos: all.filter(p => p.status === 'Acordo').length,
     valorTotal: all.reduce((s, p) => s + (p.valor_envolvido || 0), 0),
     valorDesfecho: all.reduce((s, p) => s + (p.valor_desfecho || 0), 0),
     prazosCriticos: all.filter(p => {
@@ -105,10 +106,10 @@ export default function Dashboard() {
       statusChartInstance.current = new Chart(statusChartRef.current, {
         type: 'doughnut',
         data: {
-          labels: ['Em Andamento', 'Vitória', 'Condenação', 'Arquivado'],
+          labels: ['Em Andamento', 'Vitória', 'Condenação', 'Acordo'],
           datasets: [{
-            data: [stats.andamento, stats.vitorias, stats.condenacoes, stats.arquivados],
-            backgroundColor: ['#ffa800', '#00d9a3', '#ff5757', '#a0a0a0'],
+            data: [stats.andamento, stats.vitorias, stats.condenacoes, stats.acordos],
+            backgroundColor: ['#ffa800', '#00d9a3', '#ff5757', '#4a9eff'],
             borderColor: borderColor,
             borderWidth: 3,
           }],
