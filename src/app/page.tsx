@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { AuthProvider, useAuth } from '@/hooks/useAuth'
 import { ThemeProvider } from '@/hooks/useTheme'
+import NotificationBanner from '@/components/NotificationBanner'
 import LoginScreen from '@/components/auth/LoginScreen'
 import Header from '@/components/layout/Header'
 import Dashboard from '@/components/dashboard/Dashboard'
@@ -37,6 +38,9 @@ function AppContent() {
     <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
       <div style={{ maxWidth: 1600, margin: '0 auto', padding: '20px 20px' }}>
         <Header activeTab={activeTab} onTabChange={setActiveTab} />
+
+        {/* Notification banner — audiências de hoje e amanhã */}
+        <NotificationBanner />
 
         {/* Tab content */}
         {activeTab === 'dashboard' && <Dashboard />}

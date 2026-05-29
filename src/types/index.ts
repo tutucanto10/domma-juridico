@@ -31,6 +31,7 @@ export interface Processo {
   data_inicio: string | null
   data_conclusao: string | null
   data_audiencia: string | null
+  hora_audiencia: string | null
   observacoes: string
   tags: string
   documentos: string

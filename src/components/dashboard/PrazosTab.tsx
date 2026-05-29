@@ -63,6 +63,11 @@ export default function PrazosTab() {
         </td>
         <td style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>
           {formatDate(p.data_audiencia)}
+          {p.hora_audiencia && (
+            <span style={{ display: 'block', fontSize: '0.8em', color: '#0f72e5', marginTop: 2 }}>
+              🕐 {p.hora_audiencia}
+            </span>
+          )}
         </td>
         <td>
           <span style={{

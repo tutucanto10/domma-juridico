@@ -318,9 +318,14 @@ export default function ProcessoModal({ area, processo, onClose, onSave }: Props
 
                   <div>
                     <label style={labelStyle}>Data de Audiência</label>
-                    <input type="date" value={form.data_audiencia?.slice(0, 10) || ''}
-                      onChange={e => setForm(f => ({ ...f, data_audiencia: e.target.value }))}
-                      style={inputStyle} />
+                    <div style={{ display: 'flex', gap: 8 }}>
+                      <input type="date" value={form.data_audiencia?.slice(0, 10) || ''}
+                        onChange={e => setForm(f => ({ ...f, data_audiencia: e.target.value }))}
+                        style={{ ...inputStyle, flex: 2 }} />
+                      <input type="time" value={form.hora_audiencia || ''}
+                        onChange={e => setForm(f => ({ ...f, hora_audiencia: e.target.value }))}
+                        style={{ ...inputStyle, flex: 1 }} />
+                    </div>
                   </div>
 
                   <div>

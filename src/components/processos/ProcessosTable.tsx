@@ -329,6 +329,11 @@ export default function ProcessosTable({ area, areaLabel, showAutorLabel = 'Auto
                           : '#a0a0a0',
                       }}>
                         {p.data_audiencia ? calculateDaysRemaining(p.data_audiencia) : '-'}
+                        {p.hora_audiencia && (
+                          <span style={{ display: 'block', fontSize: '0.75em', color: '#0f72e5', fontWeight: 400 }}>
+                            {p.hora_audiencia}
+                          </span>
+                        )}
                       </td>
                       <td>
                         <div style={{ display: 'flex', gap: 4 }}>
